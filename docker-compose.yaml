@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./config-files:/etc/nginx/conf.d
+
+    deploy:
+      resources:
+        limits:
+          cpus: 0.25
+          
+  api:
+    image: emondek/simple-api
+    
+  
+  
+
